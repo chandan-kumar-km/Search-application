@@ -13,7 +13,7 @@ function Todos() {
     const filteredData = (data) => { //responsible for updating filtered data 
         seterrors("")
         console.log(data)
-        data.length >= 1 ? setUsertodos(data) : seterrors("Data Not Found for the Search :(")
+        data.length >= 1 ? setUsertodos(data) : seterrors("Data Not Found On Search :(")
         setSetsearchformcheck(!setsearchformcheck)
     }
 
