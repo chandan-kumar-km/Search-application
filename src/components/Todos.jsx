@@ -37,6 +37,7 @@ function Todos() {
             <h1 className='text-center text-3xl'>Todos</h1>
             <div className="flex justify-center">
                 <button className=' mx-2 rounded-lg  w-1/3 text-center border-l border-2 bg-red-100' onClick={() => {
+                    seterrors("")
                     setSetsearchformcheck(!setsearchformcheck)
                 }}>Search!</button>
                 <button className=' mx-2 rounded-lg  w-1/3 text-center border-l border-2 bg-red-100' onClick={() => {

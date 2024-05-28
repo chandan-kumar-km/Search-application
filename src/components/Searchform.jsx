@@ -12,6 +12,7 @@ function Searchform({ filteredData, usertodos }) { //filterdata for changing mai
         },
         validationSchema: Yup.object({
             userId: Yup.number()
+                .min(1, 'Must have atleast 1 Number')
                 .required('user Id Required'),
             title: Yup.string()
                 .min(4, 'Must have atleast 4 characters')
@@ -20,7 +21,7 @@ function Searchform({ filteredData, usertodos }) { //filterdata for changing mai
         }),
         onSubmit: (values, action) => {
             const newData = usertodos.filter((item) => {
-                return values.userId == item.userId && values.completed == item.completed && values.title == item.title
+                return values.userId == item.userId && values.completed == item.completed && values.title == item.title.slice(0, values.title.length)
             })
             filteredData(newData)
             action.resetForm();
